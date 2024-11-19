@@ -4,7 +4,8 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(layout='centered')
-image = 'pics/1611005178271.jpg'
+# image = 'pics/1611005178271.jpg'
+image = 'pics/tcg_continuum_llc_cover.jfif'
 st.image(image, use_column_width='auto', clamp=False, channels="RGB", output_format="auto")
 st.title('Activity Tracker - October 2024')
 # read the excel file into a pandas datafram while trying to set the float format for NO decimals
@@ -26,4 +27,21 @@ custom_style = '<div style="text-align: right; font-size: 20px;">✨ A TDS Appli
 
 # Render the styled text using st.markdown
 st.markdown(custom_style, unsafe_allow_html=True)
+
+# # Alternatively, use HTML and CSS for more control over positioning
+# st.markdown(
+#     """
+#     <style>
+#     .center {
+#         display: block;
+#         margin-left: auto;
+#         margin-right: auto;
+#         width: 50%;
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
+
+# st.markdown(f'<img src="data:image/jpeg;base64,{image}" class="center"/>', unsafe_allow_html=True)
 
