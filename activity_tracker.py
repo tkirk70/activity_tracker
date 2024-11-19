@@ -19,6 +19,8 @@ df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_in
 # round to two decimal places in python pandas
 pd.options.display.float_format = '{:.0f}'.format
 fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1200, height=800)
+# Customize the hover text
+fig.update_traces(hovertemplate='<b>%{label}</b><br>Durationx: %{value:.2f}')
 fig.show()
 st.plotly_chart(fig)
 
