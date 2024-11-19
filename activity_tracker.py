@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+st.set_page_config(layout="wide")
 st.title('TCG Activity Tracker - October 2024')
 # read the excel file into a pandas datafram while trying to set the float format for NO decimals
 df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
