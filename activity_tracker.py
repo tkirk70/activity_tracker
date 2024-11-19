@@ -8,7 +8,7 @@ st.title('TCG Activity Tracker - October 2024')
 df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
 # round to two decimal places in python pandas
 pd.options.display.float_format = '{:.0f}'.format
-st.dataframe(data=df, width=None, height=None, *, use_container_width=False, hide_index=None, column_order=None, column_config=None, key=None, on_select="ignore", selection_mode="multi-row")
+st.dataframe(data=df, width=None, height=None, use_container_width=False, hide_index=None, column_order=None, column_config=None, key=None, on_select="ignore", selection_mode="multi-row")
 
 df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
 df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_index()
