@@ -20,7 +20,8 @@ df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_in
 pd.options.display.float_format = '{:.0f}'.format
 fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1200, height=800)
 # Customize the hover text
-fig.update_traces(hovertemplate='<b>%{parent}</b><b>%{label}</b><br>Hours: %{value:.2f}')
+# Customize the hover text
+fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
 fig.show()
 st.plotly_chart(fig)
 
