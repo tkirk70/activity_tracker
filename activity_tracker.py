@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(layout='centered')
-image = '/pics/tcg_logo.jpg'
+image = 'pics/tcg_logo.jpg'
 st.image(image, use_column_width='auto', clamp=False, channels="RGB", output_format="auto")
 st.title('TCG Activity Tracker - October 2024')
 # read the excel file into a pandas datafram while trying to set the float format for NO decimals
