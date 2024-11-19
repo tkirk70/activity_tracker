@@ -4,6 +4,8 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(layout="wide")
+image = 'https://media.licdn.com/dms/image/v2/C4D1BAQF0M6NX5USO2A/company-background_10000/company-background_10000/0/1613135007666/tcg_continuum_llc_cover?e=1732654800&amp;v=beta&amp;t=orpa690e0QvrmOblF5bDfv1A_1mcQcxPommtvwYqdj0'
+st.image(image, use_column_width='auto', clamp=False, channels="RGB", output_format="auto")
 st.title('TCG Activity Tracker - October 2024')
 # read the excel file into a pandas datafram while trying to set the float format for NO decimals
 df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
