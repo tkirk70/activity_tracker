@@ -60,7 +60,7 @@ fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %
 fig.update_layout(
     title={
         'text': "Employee Labor Hours by Customer and Activity",
-        'y':0.99,
+        'y':1.00,
         'x':0.5,
         'xanchor': 'center',
         'yanchor': 'top',
