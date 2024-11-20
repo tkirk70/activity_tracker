@@ -36,7 +36,7 @@ fig.update_layout(
         dict(
             text="Click on the customers and/or activity for more detailed view.  Hover over the data points.",
             x=0.5,
-            y=1.01,
+            y=1.05,
             showarrow=False,
             xanchor='center',
             yanchor='top'
