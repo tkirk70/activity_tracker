@@ -42,7 +42,7 @@ pd.options.display.float_format = '{:.0f}'.format
 
 # Center the dataframe
 st.markdown('<div class="centered-dataframe">', unsafe_allow_html=True)
-st.dataframe(data=df, width=None, height=None, use_container_width=True, hide_index=None, column_order=None, column_config=None, key=None, on_select="ignore", selection_mode="multi-row")
+st.dataframe(data=df, width=None, height=None, use_container_width=True, hide_index=True, column_order=None, column_config=None, key=None, on_select="ignore", selection_mode="multi-row")
 st.markdown('</div>', unsafe_allow_html=True)
 
 st.divider()  # 👈 Draws a horizontal rule
