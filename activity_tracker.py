@@ -30,7 +30,7 @@ fig.update_layout(
         'y':0.99,
         'x':0.5,
         'xanchor': 'center',
-        'yanchor': 'top'
+        'yanchor': 'top',
         'font' : {
             'size' : 23
         }
@@ -42,7 +42,7 @@ fig.update_layout(
             y=1.05,
             showarrow=False,
             xanchor='center',
-            yanchor='top'
+            yanchor='top',
             font=dict(
                 size=17
             )
