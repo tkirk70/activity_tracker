@@ -8,6 +8,19 @@ st.set_page_config(
     page_title='Activity Tracker',
     page_icon=':watch:'
 )
+
+# adjust sidebar width
+st.markdown(
+    f'''
+        <style>
+            .sidebar .sidebar-content {{
+                width: 375px;
+            }}
+        </style>
+    ''',
+    unsafe_allow_html=True
+)
+
 # image = 'pics/1611005178271.jpg'
 image = 'pics/tcg_continuum_llc_cover.jfif'
 st.image(image, use_column_width='auto', clamp=False, channels="RGB", output_format="auto")
