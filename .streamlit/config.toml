@@ -29,12 +29,12 @@ font="sans serif"
 # "serif", or "monospace".
 # font =
 
-[[pages]]
-path = "Activity_Tracker.py"
-name = "Activity Tracker"
-icon = ":alarmclock:"
+# [[pages]]
+# path = "Activity_Tracker.py"
+# name = "Activity Tracker"
+# icon = ":alarmclock:"
 
-[[pages]]
-path = "pages/Page_2.py"
-name = "Page 2 Under Contsruction"
-icon = "🚧"
+# [[pages]]
+# path = "pages/Page_2.py"
+# name = "Page 2 Under Contsruction"
+# icon = "🚧"
