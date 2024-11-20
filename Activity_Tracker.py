@@ -10,11 +10,17 @@ st.set_page_config(
 )
 
 # adjust sidebar width
-st.markdown(f'''
+# Inject custom CSS to set the width of the sidebar
+st.markdown(
+    """
     <style>
-    section[data-testid="stSidebar"] .css-ng1t4o {{width: 11rem;}}
+        section[data-testid="stSidebar"] {
+            width: 500px !important; # Set the width to your desired value
+        }
     </style>
-''',unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True,
+)
 
 # image = 'pics/1611005178271.jpg'
 image = 'pics/tcg_continuum_llc_cover.jfif'
