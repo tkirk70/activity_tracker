@@ -10,16 +10,11 @@ st.set_page_config(
 )
 
 # adjust sidebar width
-st.markdown(
-    f'''
-        <style>
-            .sidebar .sidebar-content {{
-                width: 200px;
-            }}
-        </style>
-    ''',
-    unsafe_allow_html=True
-)
+st.markdown(f'''
+    <style>
+    section[data-testid="stSidebar"] .css-ng1t4o {{width: 14rem;}}
+    </style>
+''',unsafe_allow_html=True)
 
 # image = 'pics/1611005178271.jpg'
 image = 'pics/tcg_continuum_llc_cover.jfif'
