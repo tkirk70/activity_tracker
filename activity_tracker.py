@@ -27,7 +27,7 @@ fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %
 fig.update_layout(
     title={
         'text': "Employee Labor Hours by Customer and Activity",
-        'y':1.30,
+        'y':0.95,
         'x':0.5,
         'xanchor': 'center',
         'yanchor': 'top'
@@ -35,7 +35,7 @@ fig.update_layout(
     annotations=[
         dict(
             text="Click on the customers and/or activity for more detailed view.  Hover over the data points.",
-            x=1.25,
+            x=0.90,
             y=0.45,
             showarrow=False,
             xanchor='center',
