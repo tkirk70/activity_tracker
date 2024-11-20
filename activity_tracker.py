@@ -3,7 +3,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(layout='wide')
+st.set_page_config(
+    layout='wide',
+    page_title='Activity Tracker',
+    page_icon=':clock:'
+)
 # image = 'pics/1611005178271.jpg'
 image = 'pics/tcg_continuum_llc_cover.jfif'
 st.image(image, use_column_width='auto', clamp=False, channels="RGB", output_format="auto")
