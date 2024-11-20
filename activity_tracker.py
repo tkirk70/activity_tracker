@@ -37,7 +37,7 @@ fig.update_layout(
     },
     annotations=[
         dict(
-            text="Click on the customer and/or activity.  Hover over the data points.",
+            text="Click on the customer or activity.  Hover over the data points.",
             x=0.5,
             y=1.05,
             showarrow=False,
