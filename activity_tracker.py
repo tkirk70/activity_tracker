@@ -35,8 +35,8 @@ fig.update_layout(
     annotations=[
         dict(
             text="Click on the customers and/or activity for more detailed view.  Hover over the data points.",
-            x=0.90,
-            y=0.45,
+            x=0.5,
+            y=0.90,
             showarrow=False,
             xanchor='center',
             yanchor='top'
