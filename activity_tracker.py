@@ -32,7 +32,7 @@ fig.update_layout(
         'xanchor': 'center',
         'yanchor': 'top',
         'font' : {
-            'size' : 23
+            'size' : 29
         }
     },
     annotations=[
@@ -44,7 +44,7 @@ fig.update_layout(
             xanchor='center',
             yanchor='top',
             font=dict(
-                size=17
+                size=23
             )
         )
     ]
