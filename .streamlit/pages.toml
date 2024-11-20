@@ -1,7 +1,7 @@
 [[pages]]
 path = "activity_tracker.py"
 name = "Activity Tracker"
-icon = ":clock:"
+icon = ":alarmclock:"
 
 # [[pages]]
 # path = "pages/Page_2.py"
