@@ -3,16 +3,41 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(layout='centered')
+st.set_page_config(layout='wide')
 # image = 'pics/1611005178271.jpg'
 image = 'pics/tcg_continuum_llc_cover.jfif'
 st.image(image, use_column_width='auto', clamp=False, channels="RGB", output_format="auto")
-st.title('Activity Tracker - October 2024')
-# read the excel file into a pandas datafram while trying to set the float format for NO decimals
+# Center the title using HTML and CSS
+st.markdown(
+    """
+    <style>
+    .centered-title {
+        text-align: center;
+        font-size: 2em;
+        margin-top: 0;
+    }
+    .centered-dataframe {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Add the centered title
+st.markdown('<h1 class="centered-title">Activity Tracker - October 2024</h1>', unsafe_allow_html=True)
+
+# Read the Excel file into a pandas dataframe
 df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
-# round to two decimal places in python pandas
+
+# Set the float format for no decimals
 pd.options.display.float_format = '{:.0f}'.format
+
+# Center the dataframe
+st.markdown('<div class="centered-dataframe">', unsafe_allow_html=True)
 st.dataframe(data=df, width=None, height=None, use_container_width=False, hide_index=None, column_order=None, column_config=None, key=None, on_select="ignore", selection_mode="multi-row")
+st.markdown('</div>', unsafe_allow_html=True)
 
 df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
 df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_index()
