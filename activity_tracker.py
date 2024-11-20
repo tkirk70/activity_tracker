@@ -22,6 +22,29 @@ fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duratio
 # Customize the hover text
 # Customize the hover text
 fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
+
+# Add title and subtitle
+fig.update_layout(
+    title={
+        'text': "Employee Labor Hours by Customer and Activity",
+        'y':0.9,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'
+    },
+    annotations=[
+        dict(
+            text="Click on the customers and/or activity for more detailed view.  Hover over the data points.",
+            x=0.5,
+            y=0.85,
+            showarrow=False,
+            xanchor='center',
+            yanchor='top'
+        )
+    ]
+)
+
+
 fig.show()
 st.plotly_chart(fig)
 
