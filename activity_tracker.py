@@ -6,7 +6,7 @@ import plotly.express as px
 st.set_page_config(
     layout='wide',
     page_title='Activity Tracker',
-    page_icon=':clock:'
+    page_icon=':watch:'
 )
 # image = 'pics/1611005178271.jpg'
 image = 'pics/tcg_continuum_llc_cover.jfif'
