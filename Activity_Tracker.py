@@ -12,7 +12,7 @@ st.set_page_config(
 # adjust sidebar width
 st.markdown(f'''
     <style>
-    section[data-testid="stSidebar"] .css-ng1t4o {{width: 14rem;}}
+    section[data-testid="stSidebar"] .css-ng1t4o {{width: 11rem;}}
     </style>
 ''',unsafe_allow_html=True)
 
