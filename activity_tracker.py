@@ -35,8 +35,8 @@ df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
 df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')  # Change the format as needed
 
 # Format the TimeStart (24HR) and TimeStop (24HR) columns
-df['TimeStart (24HR)'] = pd.to_datetime(df['TimeStart (24HR)'], format='%H:%M', errors='coerce').dt.strftime('%H:%M')
-df['TimeStop (24HR)'] = pd.to_datetime(df['TimeStop (24HR)'], format='%H:%M', errors='coerce').dt.strftime('%H:%M')
+df['TimeStart (24HR)'] = pd.to_datetime(df['TimeStart (24HR)'], format='%H:%M', errors='coerce')
+df['TimeStop (24HR)'] = pd.to_datetime(df['TimeStop (24HR)'], format='%H:%M', errors='coerce')
 
 # Format the Duration column to two decimal places
 df['Duration'] = df['Duration'].round(2)
