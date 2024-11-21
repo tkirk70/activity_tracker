@@ -40,26 +40,16 @@ df['Duration'] = df['Duration'].round(2)
 
 st.sidebar.header("Filter By:")
 
-# Employee filter
-employee_filter = st.sidebar.multiselect(
-    "Filter by Employee:",
-    options=sorted(df['Employee'].unique()),
-    default=None
-)
+employee_filter = st.sidebar.multiselect("Filter by Employee:",
+                                  options=df['Employee'].unique(),
+                                  default=None)
+customer_filter = st.sidebar.multiselect("Filter by Customer:",
+                                  options=df['Customer'].unique(),
+                                  default=None)
+activity_filter = st.sidebar.multiselect("Filter by Activity:",
+                                  options=df['Activity'].unique(),
+                                  default=None)
 
-# Customer filter
-customer_filter = st.sidebar.multiselect(
-    "Filter by Customer:",
-    options=sorted(df['Customer'].unique()),
-    default=None
-)
-
-# Activity filter
-activity_filter = st.sidebar.multiselect(
-    "Filter by Activity:",
-    options=sorted(df['Activity'].unique()),
-    default=None
-)
 # Apply filters
 if customer_filter and employee_filter and activity_filter:
     selection_query = df.query(
