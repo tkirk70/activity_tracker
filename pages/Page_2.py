@@ -30,7 +30,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-df=pd.read_excel('../ActivityTracker.xlsx')
+df=pd.read_excel('./ActivityTracker.xlsx')
 
 st.sidebar.header("Filter By:")
 
