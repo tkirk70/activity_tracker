@@ -40,21 +40,15 @@ df['Duration'] = df['Duration'].round(2)
 
 st.sidebar.header("Filter By:")
 
-# Sort the unique values alphabetically
-employee_options = sorted(df['Employee'].unique())
-customer_options = sorted(df['Customer'].unique())
-activity_options = sorted(df['Activity'].unique())
-
-# Create the multiselect dropdowns
 employee_filter = st.sidebar.multiselect("Filter by Employee:",
-                                         options=employee_options,
-                                         default=None)
+                                  options=df['Employee'].unique(),
+                                  default=None)
 customer_filter = st.sidebar.multiselect("Filter by Customer:",
-                                         options=customer_options,
-                                         default=None)
+                                  options=df['Customer'].unique(),
+                                  default=None)
 activity_filter = st.sidebar.multiselect("Filter by Activity:",
-                                         options=activity_options,
-                                         default=None)
+                                  options=df['Activity'].unique(),
+                                  default=None)
 
 # Apply filters
 if customer_filter and employee_filter and activity_filter:
