@@ -32,6 +32,12 @@ st.markdown(
 
 df=pd.read_excel('./ActivityTracker.xlsx')
 
+# Format the Date column
+df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')  # Change the format as needed
+
+# Format the Duration column to two decimal places
+df['Duration'] = df['Duration'].round(2)
+
 st.sidebar.header("Filter By:")
 
 employee_filter = st.sidebar.multiselect("Filter by Employee:",
@@ -77,3 +83,13 @@ else:
     selection_query=df 
 
 st.dataframe(selection_query)
+
+st.divider()  # 👈 Draws a horizontal rule
+
+# figure out what chart to use here and if we need to groupby the df
+
+# Custom CSS style for the text
+custom_style = '<div style="text-align: right; font-size: 20px;">✨ A TDS Application ✨</div>'
+
+# Render the styled text using st.markdown
+st.markdown(custom_style, unsafe_allow_html=True)
