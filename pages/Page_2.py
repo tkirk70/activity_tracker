@@ -34,15 +34,15 @@ df=pd.read_excel('./ActivityTracker.xlsx')
 
 st.sidebar.header("Filter By:")
 
-category = st.sidebar.multiselect("Filter by Employee:",
+employee_filter = st.sidebar.multiselect("Filter by Employee:",
                                   options=df['Employee'].unique(),
                                   default=None)
-category = st.sidebar.multiselect("Filter by Customer:",
+customer_filter = st.sidebar.multiselect("Filter by Customer:",
                                   options=df['Customer'].unique(),
                                   default=None)
 
 selection_query=df.query(
-    "Employee== @category && Cusomer== @category"
+    "Employee== @employee_filter and Cusomer== @customer_filter"
 )
 
 st.dataframe(selection_query)
