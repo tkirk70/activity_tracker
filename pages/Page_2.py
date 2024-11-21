@@ -42,7 +42,7 @@ customer_filter = st.sidebar.multiselect("Filter by Customer:",
                                   default=None)
 
 selection_query=df.query(
-    "Employee== @employee_filter and Cusomer== @customer_filter"
+    "Employee== @employee_filter and Customer== @customer_filter"
 )
 
 st.dataframe(selection_query)
