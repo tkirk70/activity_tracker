@@ -102,7 +102,7 @@ if activity_filter:
 else:
     activity_filter1 = "All Activities"
 
-indent = "     "   
+indent = "   -   "   
 st.subheader(f'{indent}Employee: {employee_filter1}')
 st.subheader(f'{indent}Customer: {customer_filter1}')
 st.subheader(f'{indent}Activity: {activity_filter1}')
