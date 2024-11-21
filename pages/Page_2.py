@@ -41,13 +41,13 @@ df['Duration'] = df['Duration'].round(2)
 st.sidebar.header("Filter By:")
 
 employee_filter = st.sidebar.multiselect("Filter by Employee:",
-                                  options=df['Employee'].unique(),
+                                  options=sorted(df['Employee'].unique()),
                                   default=None)
 customer_filter = st.sidebar.multiselect("Filter by Customer:",
-                                  options=df['Customer'].unique(),
+                                  options=sorted(df['Customer'].unique())
                                   default=None)
 activity_filter = st.sidebar.multiselect("Filter by Activity:",
-                                  options=df['Activity'].unique(),
+                                  options=sorted(df['Activity'].unique()),
                                   default=None)
 
 # Apply filters
