@@ -86,7 +86,7 @@ st.dataframe(selection_query)
 
 st.divider()  # 👈 Draws a horizontal rule
 
-total_hours = (selection_query['Duration'].sum())
+total_hours = round((selection_query['Duration'].sum()),2)
 
 st.markdown("### Employee, Customer, Activity:")
 st.subheader(f'{employee_filter}, {customer_filter}, {activity_filter}')
