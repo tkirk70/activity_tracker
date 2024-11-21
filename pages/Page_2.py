@@ -50,9 +50,11 @@ elif customer_filter:
     selection_query = df.query(
         "Customer in @customer_filter"
     )
-else:
+elif employee_filter:
     selection_query = df.query(
         "Employee in @employee_filter"
-    )    
+    )
+else:
+    selection_query=df 
 
 st.dataframe(selection_query)
