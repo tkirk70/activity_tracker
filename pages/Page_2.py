@@ -92,7 +92,7 @@ st.markdown("### Employee, Customer, Activity:")
 if employee_filter:
     employee_filter1 = employee_filter[0]
 else:
-    "None"
+    employee_filter1="None"
 st.subheader(f'{employee_filter1}, {customer_filter}, {activity_filter}')
 st.subheader(f'Total Hours: {total_hours}')
 
