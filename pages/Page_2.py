@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import plotly_express as px
 
 st.set_page_config(
     page_title="Data Construction",
@@ -14,6 +16,7 @@ st.set_page_config(
 
 st.title('Page Two is under construction.')
 
+
 # adjust sidebar width - looks like there is a minimum but this worked and the menu can not be expanded or contracted.
 # Inject custom CSS to set the width of the sidebar
 st.markdown(
@@ -26,3 +29,17 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+df=pd.read_excel('../ActivityTracker.xlsx')
+
+st.sidebar.header("Filter By:")
+
+category = st.sidebar.multiselect("Filter by Employee:",
+                                  options=df['Employee'].unique(),
+                                  default=df['Employee'].unique())
+
+selection_query=df.query(
+    "Employee== @category"
+)
+
+st.dataframe(selection_query)

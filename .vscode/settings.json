@@ -1,3 +1,4 @@
 {
-    "taipyStudio.config.mainPythonFile": "Activity_Tracker.py"
+    "taipyStudio.config.mainPythonFile": "Activity_Tracker.py",
+    "taipyStudio.gUI.elementsFilePaths": []
 }
