@@ -89,7 +89,11 @@ st.divider()  # 👈 Draws a horizontal rule
 total_hours = round((selection_query['Duration'].sum()),2)
 
 st.markdown("### Employee, Customer, Activity:")
-st.subheader(f'{employee_filter}, {customer_filter}, {activity_filter}')
+if not None:
+    employee_filter1 = employee_filter[0]
+else:
+    "None"
+st.subheader(f'{employee_filter1}, {customer_filter}, {activity_filter}')
 st.subheader(f'Total Hours: {total_hours}')
 
 # figure out what chart to use here and if we need to groupby the df
