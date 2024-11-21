@@ -96,7 +96,7 @@ else:
 if customer_filter:
     customer_filter1 = customer_filter[0]
 else:
-    customer_filter = "All Customers"
+    customer_filter1 = "All Customers"
 if activity_filter:
     activity_filter1 = activity_filter[0]
 else:
