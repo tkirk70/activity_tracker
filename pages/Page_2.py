@@ -41,14 +41,11 @@ df['Duration'] = df['Duration'].round(2)
 st.sidebar.header("Filter By:")
 
 employee_filter = st.sidebar.selectbox("Filter by Employee:",
-                                  options=df['Employee'].unique(),
-                                  placeholder=None)
+                                  options=df['Employee'].unique())
 customer_filter = st.sidebar.selectbox("Filter by Customer:",
-                                  options=df['Customer'].unique(),
-                                  placeholder=None)
+                                  options=df['Customer'].unique())
 activity_filter = st.sidebar.selectbox("Filter by Activity:",
-                                  options=df['Activity'].unique(),
-                                  placeholder=None)
+                                  options=df['Activity'].unique())
 
 # Apply filters
 if customer_filter and employee_filter and activity_filter:
