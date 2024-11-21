@@ -86,6 +86,12 @@ st.dataframe(selection_query)
 
 st.divider()  # 👈 Draws a horizontal rule
 
+total_hours = (selection_query['Duration'].sum())
+
+st.markdown("### Employee, Customer, Activity:")
+st.subheader(f'{employee_filter}, {customer_filter}, {activity_filter}')
+st.subheader(f'Total hours: {total_hours}')
+
 # figure out what chart to use here and if we need to groupby the df
 fig = px.pie(df, values='Duration', names='Customer', title="Employee Time by Customer", width=800, height=600, hover_data=['Duration'], labels={'Duration': 'Hours'})
 fig.update_traces(textposition='inside', textinfo='percent+label', texttemplate='%{label}: %{percent:.0%} (%{value:.0f} hours)')
