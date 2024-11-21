@@ -40,12 +40,15 @@ df['Duration'] = df['Duration'].round(2)
 
 st.sidebar.header("Filter By:")
 
-employee_filter = st.sidebar.selectbox("Filter by Employee:",
-                                  options=df['Employee'].unique())
-customer_filter = st.sidebar.selectbox("Filter by Customer:",
-                                  options=df['Customer'].unique())
-activity_filter = st.sidebar.selectbox("Filter by Activity:",
-                                  options=df['Activity'].unique())
+employee_filter = st.sidebar.multiselect("Filter by Employee:",
+                                  options=df['Employee'].unique(),
+                                  default=None)
+customer_filter = st.sidebar.multiselect("Filter by Customer:",
+                                  options=df['Customer'].unique(),
+                                  default=None)
+activity_filter = st.sidebar.multiselect("Filter by Activity:",
+                                  options=df['Activity'].unique(),
+                                  default=None)
 
 # Apply filters
 if customer_filter and employee_filter and activity_filter:
@@ -87,15 +90,15 @@ total_hours = round((selection_query['Duration'].sum()),2)
 
 st.markdown("### Employee, Customer, Activity:")
 if employee_filter:
-    employee_filter1 = employee_filter
+    employee_filter1 = employee_filter[0]
 else:
     employee_filter1 = "All Employees"
 if customer_filter:
-    customer_filter1 = customer_filter
+    customer_filter1 = customer_filter[0]
 else:
     customer_filter1 = "All Customers"
 if activity_filter:
-    activity_filter1 = activity_filter
+    activity_filter1 = activity_filter[0]
 else:
     activity_filter1 = "All Activities"
     
