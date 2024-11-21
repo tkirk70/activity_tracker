@@ -42,13 +42,13 @@ st.sidebar.header("Filter By:")
 
 employee_filter = st.sidebar.selectbox("Filter by Employee:",
                                   options=df['Employee'].unique(),
-                                  default=None)
+                                  placeholder=None)
 customer_filter = st.sidebar.selectbox("Filter by Customer:",
                                   options=df['Customer'].unique(),
-                                  default=None)
+                                  placeholder=None)
 activity_filter = st.sidebar.selectbox("Filter by Activity:",
                                   options=df['Activity'].unique(),
-                                  default=None)
+                                  placeholder=None)
 
 # Apply filters
 if customer_filter and employee_filter and activity_filter:
