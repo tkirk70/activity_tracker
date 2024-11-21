@@ -37,9 +37,12 @@ st.sidebar.header("Filter By:")
 category = st.sidebar.multiselect("Filter by Employee:",
                                   options=df['Employee'].unique(),
                                   default=None)
+category = st.sidebar.multiselect("Filter by Customer:",
+                                  options=df['Customer'].unique(),
+                                  default=None)
 
 selection_query=df.query(
-    "Employee== @category"
+    "Employee== @category && Cusomer== @category"
 )
 
 st.dataframe(selection_query)
