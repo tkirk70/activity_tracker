@@ -90,15 +90,15 @@ total_hours = round((selection_query['Duration'].sum()),2)
 
 st.markdown("### Employee, Customer, Activity:")
 if employee_filter:
-    employee_filter1 = employee_filter[0]
+    employee_filter1 = employee_filter[0:]
 else:
     employee_filter1 = "All Employees"
 if customer_filter:
-    customer_filter1 = customer_filter[0]
+    customer_filter1 = customer_filter[0:]
 else:
     customer_filter1 = "All Customers"
 if activity_filter:
-    activity_filter1 = activity_filter[0]
+    activity_filter1 = activity_filter[0:]
 else:
     activity_filter1 = "All Activities"
     
