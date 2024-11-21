@@ -103,6 +103,8 @@ else:
     activity_filter1 = "All Activities"
     
 st.subheader(f'Employee: {employee_filter1}\nCustomer: {customer_filter1}\nActivity: {activity_filter1}')
+st.subheader(f'Customer: {customer_filter1}')
+st.subheader(f'Activity: {activity_filter1}')
 if total_hours:
     st.subheader(f'Total Hours: {total_hours}')
 else:
