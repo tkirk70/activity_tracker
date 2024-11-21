@@ -89,7 +89,7 @@ st.divider()  # 👈 Draws a horizontal rule
 total_hours = round((selection_query['Duration'].sum()),2)
 
 st.markdown("### Employee, Customer, Activity:")
-if not None:
+if employee_filter:
     employee_filter1 = employee_filter[0]
 else:
     "None"
