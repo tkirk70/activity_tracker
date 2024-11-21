@@ -87,7 +87,7 @@ st.dataframe(selection_query)
 st.divider()  # 👈 Draws a horizontal rule
 
 # figure out what chart to use here and if we need to groupby the df
-fig = px.pie(selection_query, values='Duration', names=f'{customer_filter}', title="Employee Time by Customer", width=800, height=600, hover_data=['Duration'], labels={'Duration': 'Hours'})
+fig = px.pie(selection_query, values='Duration', names=customer_filter', title="Employee Time by Customer", width=800, height=600, hover_data=['Duration'], labels={'Duration': 'Hours'})
 fig.update_traces(textposition='inside', textinfo='percent+label', texttemplate='%{label}: %{percent:.0%} (%{value:.0f} hours)')
 # Format the hover data
 fig.update_traces(hovertemplate='%{label}: %{value:.0f} Hours<extra></extra>')
