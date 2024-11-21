@@ -88,7 +88,7 @@ st.divider()  # 👈 Draws a horizontal rule
 
 total_hours = round((selection_query['Duration'].sum()),2)
 
-st.markdown("### Selected Parameters:")
+st.markdown("## Selected Parameters:")
 if employee_filter:
     employee_filter1 = employee_filter[0]
 else:
@@ -102,9 +102,9 @@ if activity_filter:
 else:
     activity_filter1 = "All Activities"
     
-st.subheader(f'Employee: {employee_filter1}')
-st.subheader(f'Customer: {customer_filter1}')
-st.subheader(f'Activity: {activity_filter1}')
+st.subheader(f' Employee: {employee_filter1}')
+st.subheader(f' Customer: {customer_filter1}')
+st.subheader(f' Activity: {activity_filter1}')
 if total_hours:
     st.subheader(f'Total Hours: {total_hours}')
 else:
