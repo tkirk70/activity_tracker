@@ -42,9 +42,13 @@ customer_filter = st.sidebar.multiselect("Filter by Customer:",
                                   default=None)
 
 # Apply filters
-if customer_filter:
+if customer_filter and employee_filter:
     selection_query = df.query(
         "Employee in @employee_filter and Customer in @customer_filter"
+    )
+elif customer_filter:
+    selection_query = df.query(
+        "Customer in @customer_filter"
     )
 else:
     selection_query = df.query(
