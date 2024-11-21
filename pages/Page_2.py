@@ -6,8 +6,8 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="auto",
     menu_items={
-        'SharePoint': 'https://tcg3pl.sharepoint.com/SitePages/Activity-Tracker.aspx',
-        'Suggestions': "tds@tcg3pl.com",
+        'Get help': 'https://tcg3pl.sharepoint.com/SitePages/Activity-Tracker.aspx',
+        'Report a bug': "tds@tcg3pl.com",
         'About': "This app is a collection of warehouse hours broken down by customer and activity"
     }
 )
