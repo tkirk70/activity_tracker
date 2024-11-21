@@ -103,7 +103,10 @@ else:
     activity_filter1 = "All Activities"
     
 st.subheader(f'{employee_filter1}, {customer_filter1}, {activity_filter1}')
-st.subheader(f'Total Hours: {total_hours}')
+if total_hours:
+    st.subheader(f'Total Hours: {total_hours}')
+else:
+    total_hours = '0'
 
 # figure out what chart to use here and if we need to groupby the df
 fig = px.pie(df, values='Duration', names='Customer', title="Employee Time by Customer", width=800, height=600, hover_data=['Duration'], labels={'Duration': 'Hours'})
