@@ -66,6 +66,12 @@ st.divider()  # 👈 Draws a horizontal rule
 df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
 df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_index()
 
+# Check for NaN values and replace them
+df = df.fillna(0)
+
+# Print the dataframe to debug
+print(df.head())
+
 fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
 # fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
 
