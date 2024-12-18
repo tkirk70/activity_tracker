@@ -99,6 +99,8 @@ st.plotly_chart(fig)
 
 st.write('Line 108 after st.plotly_chart(fig)')
 
+st.dataframe(df)
+
 custom_style = '<div style="text-align: right; font-size: 20px;">✨ A TDS Application ✨</div>'
 st.markdown(custom_style, unsafe_allow_html=True)
 
