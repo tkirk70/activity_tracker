@@ -24,7 +24,7 @@ st.markdown(
 
 # image = 'pics/1611005178271.jpg'
 image = 'pics/tcg_continuum_llc_cover.jfif'
-st.image(image, use_column_width='auto', clamp=False, channels="RGB", output_format="auto")
+st.image(image, use_container_width=True, clamp=False, channels="RGB", output_format="auto")
 # Center the title using HTML and CSS
 st.markdown(
     """
