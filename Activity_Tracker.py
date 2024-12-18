@@ -101,7 +101,7 @@ st.write('Line 108 after st.plotly_chart(fig)')
 
 st.dataframe(df)
 
-df = df.groupby(['Customer']).size().reset_index(name='Duration')
+df = df.groupby(['Customer']).reset_index(name='Duration')
 
 fig = px.pie(df, values='Duration', names='Customer', title="Hours by Customer",)
 st.plotly_chart(fig, theme=None)
