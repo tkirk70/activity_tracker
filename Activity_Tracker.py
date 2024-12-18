@@ -102,7 +102,7 @@ fig.update_layout(
 )
 
 
-fig.show()
+# fig.show()
 st.plotly_chart(fig)
 
 st.write('Line 108 after st.plotly_chart(fig)')
