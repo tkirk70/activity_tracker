@@ -69,7 +69,7 @@ df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
 df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_index()
 # round to two decimal places in python pandas
 pd.options.display.float_format = '{:.0f}'.format
-fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
+fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=800, height=600)
 # Customize the hover text
 # Customize the hover text
 fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
