@@ -101,6 +101,12 @@ st.write('Line 108 after st.plotly_chart(fig)')
 
 st.dataframe(df)
 
+df = df.groupby(['Customer']).size().reset_index(name='Duration')
+
+fig = px.pie(df, values='Duration', names='Customer', title="Hours by Customer",)
+st.plotly_chart(fig, theme=None)
+
+
 custom_style = '<div style="text-align: right; font-size: 20px;">✨ A TDS Application ✨</div>'
 st.markdown(custom_style, unsafe_allow_html=True)
 
