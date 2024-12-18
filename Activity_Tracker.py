@@ -72,7 +72,10 @@ df = df.fillna(0)
 # Print the dataframe to debug
 print(df.head())
 
-fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
+# Create a minimal example
+sample_df = df.head(10)  # Use only the first 10 rows for simplicity
+
+fig = px.sunburst(sample_df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
 # fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
 
 # fig.update_layout(
