@@ -79,7 +79,7 @@ df['Duration'] = df['Duration'].astype(float)
 # Aggregate data to reduce the number of rows
 df_aggregated = df.groupby(['Customer', 'Activity'])['Duration'].sum().reset_index()
 
-fig = px.sunburst(df_aggregated, path=['Customer', 'Activity'], values='Duration', width=1300, height=900)
+fig = px.sunburst(df_aggregated, path=['Customer', 'Activity'], values='Duration', width=800, height=600)
 fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
 
 # Create a minimal example
