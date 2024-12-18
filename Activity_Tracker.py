@@ -105,6 +105,8 @@ fig.update_layout(
 fig.show()
 st.plotly_chart(fig)
 
+st.write('Line 108 after st.plotly_chart(fig)')
+
 # Custom CSS style for the text
 custom_style = '<div style="text-align: right; font-size: 20px;">✨ A TDS Application ✨</div>'
 
