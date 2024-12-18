@@ -69,8 +69,20 @@ df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_in
 # Check for NaN values and replace them
 df = df.fillna(0)
 
+# Ensure columns are of correct type
+df['Customer'] = df['Customer'].astype(str)
+df['Activity'] = df['Activity'].astype(str)
+df['Employee'] = df['Employee'].astype(str)
+df['Duration'] = df['Duration'].astype(float)
+
 # Print the dataframe to debug
 print(df.head())
+
+# Aggregate data to reduce the number of rows
+df_aggregated = df.groupby(['Customer', 'Activity'])['Duration'].sum().reset_index()
+
+fig = px.sunburst(df_aggregated, path=['Customer', 'Activity'], values='Duration', width=1300, height=900)
+fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
 
 # Create a minimal example
 sample_df = df.head(10)  # Use only the first 10 rows for simplicity
