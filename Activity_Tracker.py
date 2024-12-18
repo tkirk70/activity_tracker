@@ -75,8 +75,6 @@ df['Activity'] = df['Activity'].astype(str)
 df['Employee'] = df['Employee'].astype(str)
 df['Duration'] = df['Duration'].astype(float)
 
-# Print the dataframe to debug
-print(df.head())
 
 # Aggregate data to reduce the number of rows
 df_aggregated = df.groupby(['Customer', 'Activity'])['Duration'].sum().reset_index()
@@ -87,34 +85,34 @@ fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %
 # Create a minimal example
 sample_df = df.head(10)  # Use only the first 10 rows for simplicity
 
-fig = px.sunburst(sample_df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
+# fig = px.sunburst(sample_df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
 # fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
 
-# fig.update_layout(
-#     title={
-#         'text': "Employee Labor Hours by Customer and Activity",
-#         'y':1.00,
-#         'x':0.5,
-#         'xanchor': 'center',
-#         'yanchor': 'top',
-#         'font' : {
-#             'size' : 29
-#         }
-#     },
-#     annotations=[
-#         dict(
-#             text="Click on the customer or activity. Hover over the data points.",
-#             x=0.5,
-#             y=1.05,
-#             showarrow=False,
-#             xanchor='center',
-#             yanchor='top',
-#             font=dict(
-#                 size=23
-#             )
-#         )
-#     ]
-# )
+fig.update_layout(
+    title={
+        'text': "Employee Labor Hours by Customer and Activity",
+        'y':1.00,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top',
+        'font' : {
+            'size' : 29
+        }
+    },
+    annotations=[
+        dict(
+            text="Click on the customer or activity. Hover over the data points.",
+            x=0.5,
+            y=1.05,
+            showarrow=False,
+            xanchor='center',
+            yanchor='top',
+            font=dict(
+                size=23
+            )
+        )
+    ]
+)
 
 st.plotly_chart(fig)
 
