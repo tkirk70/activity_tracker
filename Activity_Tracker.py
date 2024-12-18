@@ -1,4 +1,3 @@
-# import dependencies
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -9,7 +8,6 @@ st.set_page_config(
     page_icon=':watch:'
 )
 
-# adjust sidebar width
 # Inject custom CSS to set the width of the sidebar
 st.markdown(
     """
@@ -22,9 +20,9 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# image = 'pics/1611005178271.jpg'
 image = 'pics/tcg_continuum_llc_cover.jfif'
 st.image(image, use_container_width=True, clamp=False, channels="RGB", output_format="auto")
+
 # Center the title using HTML and CSS
 st.markdown(
     """
@@ -67,14 +65,10 @@ st.divider()  # 👈 Draws a horizontal rule
 
 df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
 df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_index()
-# round to two decimal places in python pandas
-pd.options.display.float_format = '{:.0f}'.format
-fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=800, height=600)
-# Customize the hover text
-# Customize the hover text
+
+fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
 fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
 
-# Add title and subtitle
 fig.update_layout(
     title={
         'text': "Employee Labor Hours by Customer and Activity",
@@ -88,7 +82,7 @@ fig.update_layout(
     },
     annotations=[
         dict(
-            text="Click on the customer or activity.  Hover over the data points.",
+            text="Click on the customer or activity. Hover over the data points.",
             x=0.5,
             y=1.05,
             showarrow=False,
@@ -101,16 +95,11 @@ fig.update_layout(
     ]
 )
 
-
-# fig.show()
 st.plotly_chart(fig)
 
 st.write('Line 108 after st.plotly_chart(fig)')
 
-# Custom CSS style for the text
 custom_style = '<div style="text-align: right; font-size: 20px;">✨ A TDS Application ✨</div>'
-
-# Render the styled text using st.markdown
 st.markdown(custom_style, unsafe_allow_html=True)
 
 # # Alternatively, use HTML and CSS for more control over positioning
