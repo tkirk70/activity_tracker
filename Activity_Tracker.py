@@ -67,33 +67,33 @@ df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
 df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_index()
 
 fig = px.sunburst(df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
-fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
+# fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
 
-fig.update_layout(
-    title={
-        'text': "Employee Labor Hours by Customer and Activity",
-        'y':1.00,
-        'x':0.5,
-        'xanchor': 'center',
-        'yanchor': 'top',
-        'font' : {
-            'size' : 29
-        }
-    },
-    annotations=[
-        dict(
-            text="Click on the customer or activity. Hover over the data points.",
-            x=0.5,
-            y=1.05,
-            showarrow=False,
-            xanchor='center',
-            yanchor='top',
-            font=dict(
-                size=23
-            )
-        )
-    ]
-)
+# fig.update_layout(
+#     title={
+#         'text': "Employee Labor Hours by Customer and Activity",
+#         'y':1.00,
+#         'x':0.5,
+#         'xanchor': 'center',
+#         'yanchor': 'top',
+#         'font' : {
+#             'size' : 29
+#         }
+#     },
+#     annotations=[
+#         dict(
+#             text="Click on the customer or activity. Hover over the data points.",
+#             x=0.5,
+#             y=1.05,
+#             showarrow=False,
+#             xanchor='center',
+#             yanchor='top',
+#             font=dict(
+#                 size=23
+#             )
+#         )
+#     ]
+# )
 
 st.plotly_chart(fig)
 
