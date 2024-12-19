@@ -32,6 +32,9 @@ st.markdown(
 
 df=pd.read_excel('./ActivityTracker.xlsx')
 
+# Drop column 'Unnamed: 9'
+df.drop('Unnamed: 9', axis=1, inplace=True)
+
 # Format the Date column
 df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')  # Change the format as needed
 

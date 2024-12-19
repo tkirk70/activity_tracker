@@ -47,6 +47,9 @@ st.markdown('<h1 class="centered-title">Activity Tracker - October 2024</h1>', u
 # Read the Excel file into a pandas dataframe
 df = pd.read_excel('ActivityTracker.xlsx', sheet_name='TimeSheet')
 
+# Drop column 'Unnamed: 9'
+df.drop('Unnamed: 9', axis=1, inplace=True)
+
 # Format the Date column
 df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')  # Change the format as needed
 
