@@ -77,13 +77,11 @@ df['Duration'] = df['Duration'].astype(float)
 
 
 # Aggregate data to reduce the number of rows
-df_aggregated = df.groupby(['Customer', 'Activity'])['Duration'].sum().reset_index()
+df_aggregated = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_index()
 
-fig = px.sunburst(df_aggregated, path=['Customer', 'Activity'], values='Duration', width=800, height=600)
+fig = px.sunburst(df_aggregated, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
 fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
 
-# Create a minimal example
-sample_df = df.head(10)  # Use only the first 10 rows for simplicity
 
 # fig = px.sunburst(sample_df, path=['Customer', 'Activity', 'Employee'], values='Duration', width=1300, height=900)
 # fig.update_traces(hovertemplate='<b>%{parent}</b><br><b>%{label}</b><br>Hours: %{value:.2f}')
@@ -116,15 +114,7 @@ fig.update_layout(
 
 st.plotly_chart(fig)
 
-st.write('Line 108 after st.plotly_chart(fig)')
-
-st.dataframe(df)
-
 df = df.groupby(['Customer', 'Activity', 'Employee'])['Duration'].sum().reset_index()
-
-fig = px.pie(df, values='Duration', names='Customer', title="Hours by Customer",)
-st.plotly_chart(fig, theme=None)
-
 
 custom_style = '<div style="text-align: right; font-size: 20px;">✨ A TDS Application ✨</div>'
 st.markdown(custom_style, unsafe_allow_html=True)
